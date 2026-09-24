@@ -94,7 +94,7 @@ class Service(QObject):
 
 
 class Daemon(QObject):
-    def __init__(self, app: QApplication, notify: bool = True) -> None:
+    def __init__(self, app: QApplication, notify: bool = False) -> None:
         super().__init__()
         self.app = app
         self.notify_enabled = notify
@@ -191,7 +191,7 @@ class Daemon(QObject):
             log.debug("Notification failed: %s", exc)
 
 
-def run_daemon(notify: bool = True) -> int:
+def run_daemon(notify: bool = False) -> int:
     app = QApplication(sys.argv)
     app.setApplicationName("BazziteScreenshot")
     app.setDesktopFileName("io.github.bazzitescreenshot.capture")

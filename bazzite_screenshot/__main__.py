@@ -12,7 +12,7 @@ def main() -> int:
     sub = parser.add_subparsers(dest="command", required=True)
 
     daemon = sub.add_parser("daemon", help="run the resident capture daemon")
-    daemon.add_argument("--no-notify", action="store_true", help="do not show desktop notifications")
+    daemon.add_argument("--notify", action="store_true", help="show desktop notifications after copy/failure")
     sub.add_parser("trigger", help="ask the running daemon to take a screenshot")
     shortcut = sub.add_parser("register-shortcut", help="bind Print Screen to BazziteScreenshot")
     shortcut.add_argument("--no-force", action="store_true", help="fail instead of taking Print from another app")
@@ -26,7 +26,7 @@ def main() -> int:
 
     if args.command == "daemon":
         from .daemon import run_daemon
-        return run_daemon(notify=not args.no_notify)
+        return run_daemon(notify=args.notify)
     if args.command == "trigger":
         from .daemon import send_trigger
         return send_trigger()

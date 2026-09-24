@@ -66,7 +66,8 @@ The CLI:
 bazzite-screenshot trigger              # same as pressing Print
 bazzite-screenshot register-shortcut    # re-bind Print
 bazzite-screenshot unregister-shortcut
-bazzite-screenshot daemon --no-notify   # run in the foreground without notifications
+bazzite-screenshot daemon               # run in the foreground (notifications off by default)
+bazzite-screenshot daemon --notify      # same, but show desktop notifications
 ```
 
 ## How it works
