@@ -1,0 +1,18 @@
+[Unit]
+Description=BazziteScreenshot (Print Screen region/window capture)
+PartOf=graphical-session.target
+After=graphical-session.target plasma-kwin_wayland.service
+
+[Service]
+Type=dbus
+BusName=io.github.bazzitescreenshot
+Environment=PYTHONPATH=@PREFIX@/lib
+Environment=QT_QPA_PLATFORM=wayland
+ExecStartPre=/bin/sh @PREFIX@/refresh-python.sh
+ExecStart=@PREFIX@/bin/bazzite-screenshot-python -m bazzite_screenshot daemon
+Restart=on-failure
+RestartSec=2
+Slice=app.slice
+
+[Install]
+WantedBy=graphical-session.target

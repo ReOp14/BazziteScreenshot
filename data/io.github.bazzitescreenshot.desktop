@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Name=BazziteScreenshot
+Comment=Freeze the screen and copy a region or window to the clipboard
+Exec=busctl --user call io.github.bazzitescreenshot / io.github.bazzitescreenshot Trigger
+Icon=spectacle
+Terminal=false
+NoDisplay=true
+StartupNotify=false
+X-KDE-Shortcuts=Print
+X-KDE-GlobalAccel-CommandShortcut=true

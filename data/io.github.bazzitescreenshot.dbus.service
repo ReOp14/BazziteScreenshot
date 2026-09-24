@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=io.github.bazzitescreenshot
+Exec=/bin/false
+SystemdService=bazzite-screenshot.service

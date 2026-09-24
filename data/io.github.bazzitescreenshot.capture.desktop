@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=BazziteScreenshot Capture Service
+Comment=Authorizes the BazziteScreenshot daemon to use KWin's screenshot interface
+Exec=@PREFIX@/bin/bazzite-screenshot-python -m bazzite_screenshot daemon
+Icon=spectacle
+Terminal=false
+NoDisplay=true
+X-KDE-DBUS-Restricted-Interfaces=org.kde.KWin.ScreenShot2
